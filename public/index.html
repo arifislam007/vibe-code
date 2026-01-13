@@ -14,15 +14,27 @@
   </style>
 </head>
 <body>
-  <h1>IT Lab Inventory — CMS</h1>
+  <h1>Sombhabona Innovation Hub Inventory</h1>
   <form id="addForm">
     <input name="name" placeholder="Item name" required />
-    <input name="category" placeholder="Category" />
+    <select name="category">
+      <option value="">-- Category --</option>
+      <option value="Laptop">Laptop</option>
+      <option value="Desktop">Desktop</option>
+      <option value="Printer">Printer</option>
+      <option value="Other">Other</option>
+    </select>
     <input name="qty" type="number" placeholder="Qty" style="width:80px" />
     <input name="location" placeholder="Location" />
     <input name="notes" placeholder="Notes" />
     <button type="submit">Add</button>
   </form>
+
+  <div style="margin-bottom:16px">
+    <button id="exportCsv">Export CSV</button>
+    <input type="file" id="importFile" accept=".csv,.xls,.xlsx" />
+    <button id="importBtn">Import</button>
+  </div>
 
   <table id="itemsTable">
     <thead>

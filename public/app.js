@@ -52,3 +52,26 @@ document.querySelector('#itemsTable tbody').addEventListener('click', async (e)=
 });
 
 load().catch(err=>console.error(err));
+
+// Export CSV
+document.getElementById('exportCsv').addEventListener('click', ()=>{
+  window.location = '/api/items/export';
+});
+
+// Import file
+document.getElementById('importBtn').addEventListener('click', async ()=>{
+  const inp = document.getElementById('importFile');
+  if (!inp.files || !inp.files[0]) return alert('Select a file to import');
+  const fd = new FormData();
+  fd.append('file', inp.files[0]);
+  try {
+    const res = await fetch('/api/items/import', { method:'POST', body: fd });
+    const j = await res.json();
+    if (!res.ok) throw new Error(j.error || 'Import failed');
+    alert('Imported ' + (j.added||0) + ' items');
+    inp.value = '';
+    load();
+  } catch (err) {
+    alert('Import error: ' + err.message);
+  }
+});
