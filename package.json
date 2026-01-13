@@ -1,0 +1,12 @@
+{
+  "name": "itlab-cms",
+  "version": "0.1.0",
+  "description": "Simple web-based CMS to manage inventory for an IT training center computer lab.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

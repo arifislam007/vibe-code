@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IT Lab Inventory — CMS</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:20px}
+    table{border-collapse:collapse;width:100%}
+    th,td{border:1px solid #ddd;padding:8px}
+    th{background:#f4f4f4}
+    form{margin-bottom:16px}
+    input,select{padding:6px;margin-right:8px}
+  </style>
+</head>
+<body>
+  <h1>IT Lab Inventory — CMS</h1>
+  <form id="addForm">
+    <input name="name" placeholder="Item name" required />
+    <input name="category" placeholder="Category" />
+    <input name="qty" type="number" placeholder="Qty" style="width:80px" />
+    <input name="location" placeholder="Location" />
+    <input name="notes" placeholder="Notes" />
+    <button type="submit">Add</button>
+  </form>
+
+  <table id="itemsTable">
+    <thead>
+      <tr><th>ID</th><th>Name</th><th>Category</th><th>Qty</th><th>Location</th><th>Notes</th><th>Actions</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
